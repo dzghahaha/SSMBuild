@@ -11,6 +11,7 @@
         <title>Title</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
+
     <body>
         <table class="table">
             <tr>
