@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--扫描当前包下的所有组件注解-->
+    <context:component-scan base-package="com.example.src.service"/>
+    <bean id="bookServiceImpl" class="com.example.src.service.BookServiceImpl">
+        <!--这点的bookMapper就是spring-dao.xml中MapperScannerConfigurer所代理的bookMapper-->
+        <property name="bookMapper" ref="bookMapper"/>
+    </bean>
+</beans>

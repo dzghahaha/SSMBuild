@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:db.properties"/>
+
+
+    <!--c3p0连接池链接数据库-->
+<!--    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
+<!--        <property name="driverClass" value="${driver}"/>-->
+<!--        <property name="jdbcUrl" value="${url}"/>-->
+<!--        <property name="user" value="${username}"/>-->
+<!--        <property name="password" value="${password}"/>-->
+
+<!--        &lt;!&ndash;c3p0连接池的私有属性，要配&ndash;&gt;-->
+<!--        <property name="maxPoolSize" value="30"/>-->
+<!--        <property name="minPoolSize" value="10"/>-->
+<!--        &lt;!&ndash;设置连接后不自动commit&ndash;&gt;-->
+<!--        <property name="autoCommitOnClose" value="false"/>-->
+<!--        &lt;!&ndash;获取链接超市时间&ndash;&gt;-->
+<!--        <property name="checkoutTimeout" value="10000"/>-->
+<!--        &lt;!&ndash;获取连接失败重试次数&ndash;&gt;-->
+<!--        <property name="acquireRetryAttempts" value="2"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">-->
+<!--        <property name="dataSource" ref="dataSource"/>-->
+<!--        <property name="configLocation" value="classpath:mybatis-config.xml"/>-->
+<!--        <property name="mapperLocations" value="classpath:com/example/src/mapper/BookMapper.xml"/>-->
+<!--    </bean>-->
+
+
+<!--&lt;!&ndash;    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="basePackage" value="com.example.src.mapper"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    </bean>&ndash;&gt;-->
+
+<!--    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">-->
+<!--        <constructor-arg name="sqlSessionFactory" ref="sessionFactory"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="bookMapper" class="com.example.src.mapper.BookMapperImpl">-->
+<!--        <property name="sessionTemplate" ref="sqlSessionTemplate"/>-->
+<!--    </bean>-->
+<!--&lt;!&ndash;    <context:component-scan base-package="com.example.src.service"/>&ndash;&gt;-->
+<!--    <bean id="bookServiceImpl" class="com.example.src.service.BookServiceImpl">-->
+<!--        &lt;!&ndash;这点的bookMapper就是spring-dao.xml中MapperScannerConfigurer所代理的bookMapper&ndash;&gt;-->
+<!--        <property name="bookMapper" ref="bookMapper"/>-->
+<!--    </bean>-->
+</beans>
